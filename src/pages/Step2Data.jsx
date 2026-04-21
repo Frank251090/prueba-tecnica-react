@@ -10,73 +10,63 @@ const Step2Data = () => {
     <Layout 
       step={2} 
       title="Datos Personales" 
-      description="Por favor, completa la información de contacto y domicilio para continuar con tu proceso de contratación."
+      description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
     >
       <div className="form-grid">
         <div className="form-group">
-          <label>Nombre Completo</label>
-          <input type="text" className="form-control" placeholder="Ej. Juan Pérez" />
+          <label>Nombre</label>
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
+        </div>
+        <div className="form-group">
+          <label>Número de Celular</label>
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
         </div>
         <div className="form-group">
           <label>Tipo de Documento</label>
           <select className="form-control">
-            <option>Cédula de Ciudadanía</option>
-            <option>Cédula de Extranjería</option>
+            <option>Lorem Ipsum is simply</option>
           </select>
         </div>
         <div className="form-group">
           <label>Número de Documento</label>
-          <input type="text" className="form-control" placeholder="12345678" />
-        </div>
-        <div className="form-group">
-          <label>Fecha de Nacimiento</label>
-          <input type="date" className="form-control" />
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
         </div>
         <div className="form-group">
           <label>Correo Electrónico Corporativo</label>
-          <input type="email" className="form-control" placeholder="usuario@empresa.com" />
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
         </div>
         <div className="form-group">
-          <label>Número de Celular</label>
-          <input type="tel" className="form-control" placeholder="300 123 4567" />
+          <label>Fecha de Nacimiento</label>
+          <input type="text" className="form-control" placeholder="00 / 00 / 0000" />
         </div>
       </div>
 
-      <h4 className="section-title">Domicilio</h4>
+      <h4 className="section-title" style={{ color: '#666', marginTop: '10px' }}>Domicilio</h4>
       
       <div className="form-grid">
         <div className="form-group">
           <label>Dirección de Residencia</label>
-          <input type="text" className="form-control" placeholder="Calle 123 # 45 - 67" />
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
+        </div>
+        <div className="form-group">
+          <label>Ciudad / Municipio</label>
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
         </div>
         <div className="form-group">
           <label>Departamento</label>
           <select className="form-control">
-            <option>Selecciona un departamento</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <label>Ciudad / Municipio</label>
-          <select className="form-control">
-            <option>Selecciona una ciudad</option>
+            <option>Lorem Ipsum is simply</option>
           </select>
         </div>
         <div className="form-group">
           <label>Barrio</label>
-          <input type="text" className="form-control" placeholder="Nombre del barrio" />
+          <input type="text" className="form-control" placeholder="Lorem Ipsum is simply" />
         </div>
       </div>
 
       <div className="button-group">
-        <Button 
-          text="Regresar" 
-          variant="secondary"
-          onClick={() => navigate('/')} 
-        />
-        <Button 
-          text="Siguiente" 
-          onClick={() => navigate('/linea')} 
-        />
+        <Button text="Regresar" variant="secondary" onClick={() => navigate('/')} />
+        <Button text="Siguiente" onClick={() => navigate('/linea')} />
       </div>
     </Layout>
   );

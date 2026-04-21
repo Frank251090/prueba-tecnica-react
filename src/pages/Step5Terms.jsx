@@ -5,53 +5,40 @@ import Button from '../components/Button';
 
 const Step5Terms = () => {
   const navigate = useNavigate();
-  const [accepted, setAccepted] = useState(false);
+  const [check1, setCheck1] = useState(false);
+  const [check2, setCheck2] = useState(false);
 
   return (
     <Layout 
       step={5} 
-      title="Términos y Condiciones" 
-      description="Por favor lee y acepta los términos del contrato para finalizar tu solicitud."
+      title="Aceptación de Términos" 
+      description="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
     >
-      <div className="terms-box" style={{ 
-        height: '250px', 
-        overflowY: 'scroll', 
-        border: '1px solid #eee', 
-        padding: '15px', 
-        fontSize: '13px', 
-        color: '#666',
-        backgroundColor: '#fff',
-        marginBottom: '20px'
-      }}>
-        <p><strong>CONTRATO DE PRESTACIÓN DE SERVICIOS</strong></p>
-        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-        <br />
-        <p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+      <div style={{ height: '280px', overflowY: 'auto', paddingRight: '15px', color: '#333', fontSize: '13px', lineHeight: '1.6' }}>
+        <h3 style={{ fontSize: '16px', marginBottom: '10px' }}>Lorem Ipsum is not simply</h3>
+        <p style={{ marginBottom: '15px' }}>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        <p style={{ marginBottom: '15px' }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.</p>
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <input 
-          type="checkbox" 
-          id="accept" 
-          checked={accepted} 
-          onChange={(e) => setAccepted(e.target.checked)} 
-        />
-        <label htmlFor="accept" style={{ fontSize: '14px', cursor: 'pointer' }}>
-          Acepto los términos y condiciones de la empresa
+      <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#333', cursor: 'pointer' }}>
+          <input type="checkbox" checked={check1} onChange={(e) => setCheck1(e.target.checked)} />
+          Autorizo el tratamiento de mis datos personales
+        </label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#333', cursor: 'pointer' }}>
+          <input type="checkbox" checked={check2} onChange={(e) => setCheck2(e.target.checked)} />
+          Autorizo el tratamiento de mis datos personales
         </label>
       </div>
 
       <div className="button-group">
-        <Button 
-          text="Regresar" 
-          variant="secondary" 
-          onClick={() => navigate('/linea')} 
-        />
+        <Button text="Regresar" variant="secondary" onClick={() => navigate('/linea')} />
         <Button 
           text="Finalizar" 
-          onClick={() => navigate('/success')}
-          disabled={!accepted} // Opcional: bloquea el botón si no acepta
-          style={{ opacity: accepted ? 1 : 0.5 }}
+          onClick={() => navigate('/success')} 
+          disabled={!check1 || !check2} 
+          style={{ opacity: (check1 && check2) ? 1 : 0.5 }} 
         />
       </div>
     </Layout>
