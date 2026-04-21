@@ -1,39 +1,34 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Layout from '../components/Layout';
 import Button from '../components/Button';
 
 const Success = () => {
   const navigate = useNavigate();
 
   return (
-    <Layout 
-      step={5} 
-      title="¡Solicitud Exitosa!" 
-      description="Tu proceso ha sido registrado correctamente en nuestro sistema."
-    >
-      <div style={{ 
-        textAlign: 'center', 
-        padding: '60px 20px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '20px'
-      }}>
-        <div style={{ fontSize: '80px', marginBottom: '10px' }}>✅</div>
-        <h2 style={{ color: '#00755b', fontSize: '28px' }}>¡Todo listo!</h2>
-        <p style={{ color: '#666', fontSize: '16px', maxWidth: '450px', lineHeight: '1.6' }}>
-          Hemos recibido tu solicitud. Tu número de radicado es <strong>#2026-TR88</strong>. Un asesor de cuenta corporativa te contactará en las próximas 24 horas para confirmar la activación.
+    <div style={{ maxWidth: '600px', margin: '40px auto', textAlign: 'center', fontFamily: 'sans-serif' }}>
+      
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
+        <div style={{ color: '#00755b', fontSize: '24px' }}>✔</div>
+        <h2 style={{ color: '#333', fontSize: '22px', margin: 0 }}>Has finalizado tu proceso exitosamente</h2>
+      </div>
+
+      <div style={{ background: 'white', padding: '40px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: '#4CAF50', width: '80px', height: '80px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px auto' }}>
+          <span style={{ color: 'white', fontSize: '40px' }}>✓</span>
+        </div>
+        
+        <h2 style={{ color: '#00755b', marginBottom: '15px' }}>¡Todo listo!</h2>
+        
+        <h3 style={{ color: '#333', fontSize: '16px', marginBottom: '10px' }}>Bienvenido a tu nuevo Servicio de Claro</h3>
+        <p style={{ color: '#666', fontSize: '14px', lineHeight: '1.5', marginBottom: '30px', padding: '0 20px' }}>
+          Enviaremos a tu correo electrónico una copia del contrato que acabas de diligenciar y los pasos a seguir para la activación de tu plan.
         </p>
         
-        <div style={{ marginTop: '30px' }}>
-          <Button 
-            text="Volver al inicio" 
-            onClick={() => navigate('/')} 
-          />
-        </div>
+        <Button text="Volver a Inicio" onClick={() => navigate('/')} />
       </div>
-    </Layout>
+
+    </div>
   );
 };
 
